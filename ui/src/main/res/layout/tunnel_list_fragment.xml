@@ -45,41 +45,101 @@
             tools:itemCount="12"
             tools:listitem="@layout/tunnel_list_item" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
             android:visibility="@{tunnels.size() == 0 ? android.view.View.VISIBLE : android.view.View.GONE}"
             tools:visibility="gone">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/logo_placeholder"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:alpha="1"
-                android:src="@mipmap/ic_launcher" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
-                android:text="Nexus"
-                android:textSize="32sp"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="24dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/tunnel_list_placeholder_margin"
-                android:layout_marginEnd="@dimen/tunnel_list_placeholder_margin"
-                android:text="Ta connexion, sécurisée."
-                android:textSize="20sp" />
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo_placeholder"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="12dp"
+                    android:alpha="1"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:text="Nexus"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:text="Ta connexion, sécurisée."
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Forfaits"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Jour"
+                    android:textColor="#8E5CF7"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="50F · 100 Mo · 24 heures&#10;100F · 200 Mo · 24 heures&#10;150F · 300 Mo · 3 jours&#10;200F · 400 Mo · 3 jours&#10;250F · 500 Mo · 3 jours&#10;350F · 1 Go · 30 jours&#10;700F · 2 Go · 30 jours&#10;1050F · 3 Go · 30 jours&#10;1400F · 4 Go · 30 jours"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Illimité"
+                    android:textColor="#8E5CF7"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2250F · Illimité · 30 jours"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Nuit (00h à 6h)"
+                    android:textColor="#8E5CF7"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="250F · 3 Go · 30 jours"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/create_fab"
